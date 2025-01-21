@@ -1,0 +1,7 @@
+1. Create necessary File Folder
+2. Introduce with axios (axios ar fetch same)
+3. Do the Read Operation
+4. Do the Delete Operation
+5. Do the create Operation
+6. Do the Update Operation. 
+7. How to do project Formation.
