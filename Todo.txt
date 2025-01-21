@@ -6,3 +6,9 @@ http client for node js(backend) and browser(frontend)
 5. Do the create Operation
 6. Do the Update Operation. 
 7. How to do project Formation.
+
+
+
+## API Endpoints Used
+- **Get Product List**: `GET https://crud.teamrabbil.com/api/v1/ReadProduct`
+- **Delete Product**: `GET https://crud.teamrabbil.com/api/v1/DeleteProduct/{id}`
