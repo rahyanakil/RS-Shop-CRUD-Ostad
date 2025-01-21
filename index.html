@@ -52,6 +52,11 @@
         })
     }
     // delete api list function start from here
+    async function deleteItem(id){
+    let URL = `https://crud.teamrabbil.com/api/v1/DeleteProduct/${id}`
+    await axios.get(URL);
+    window.location.reload()
+       }
 </script>
     
    
