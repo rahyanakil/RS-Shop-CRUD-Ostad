@@ -20,6 +20,7 @@
                     <th>Total Price</th>
                     <th>Delete</th>
                     <th>Update</th>
+                    <Th><a href="./create.html">Create Product</a></button></Th>
                 </tr>
             </thead>
             <tbody id="itemList">
@@ -36,7 +37,6 @@
         let URL ="https://crud.teamrabbil.com/api/v1/ReadProduct";
         let res =await axios.get(URL)
         let list =res.data['data']    
-        console.log(list)
         list.forEach((item)=>{
            
             document.getElementById('itemList').innerHTML+= (`
@@ -47,7 +47,7 @@
         <td>${item['Qty']}</td>
         <td>${item['TotalPrice']}</td>
         <td><button onclick="deleteItem('${item['_id']}')">Delete</button></td>
-        <td><button onclick="updateItem('${item['_id']}')">Update</button></td> 
+        <td><button onclick="goForUpdate('${item['_id']}')">Update</button></td> 
             </tr>`)
         })
     }
@@ -56,6 +56,9 @@
     let URL = `https://crud.teamrabbil.com/api/v1/DeleteProduct/${id}`
     await axios.get(URL);
     window.location.reload()
+       }
+       function goForUpdate(id){
+        window.location =`update.html?id=${id}`
        }
 </script>
     

@@ -18,16 +18,39 @@
                 <label for="">Product Image</label>
                 <input type="text" id="ProductImg">
                 <label for="">Unit Price</label>
-                <input type="text" id="unitPrice">
+                <input type="text" id="UnitPrice">
                 <label for="">Product Qty</label>
                 <input type="text" id="ProductQty">
                 <label for="">Product Total</label>
                 <input type="text" id="ProductTotal">
-<button>Submit</button>
+                <button onclick="CreateData()">Submit</button>
             </div>
         </div>
     </div>
     
     <script src="js/axios.min.js"></script>
+    <script>
+        async function CreateData (){
+        let ProductName =document.getElementById('ProductName').value;
+        let ProductCode =document.getElementById('ProductCode').value;
+        let ProductImage =document.getElementById('ProductImg').value;
+        let UnitPrice =document.getElementById('UnitPrice').value;
+        let ProductQty =document.getElementById('ProductQty').value;
+        let ProductTotal =document.getElementById('ProductTotal').value;
+
+        let URL =`https://crud.teamrabbil.com/api/v1/CreateProduct/`
+        let dataObj={
+            ProductImg: ProductImg,
+            ProductCode: ProductCode,
+            ProductName: ProductName,
+            QTY: ProductQty,
+             TotalPrice: ProductTotal,
+             UnitPrice: UnitPrice 
+        }
+        await axios.post(URL, dataObj)
+        window.location = "index.html";
+        }
+        
+    </script>
 </body>
 </html>
